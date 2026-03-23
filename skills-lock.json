@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "seo-review": {
+      "source": "leonardomso/33-js-concepts",
+      "sourceType": "github",
+      "computedHash": "1cbe9030721e96d95a39f0437e37d407fa1f6fc94680ae04cac85c66f5eb9f5f"
+    }
+  }
+}
