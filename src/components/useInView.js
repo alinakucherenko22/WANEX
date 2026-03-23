@@ -8,15 +8,26 @@ export function useInView(options = {}) {
     const element = ref.current
     if (!element) return
 
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setInView(true)
-        observer.unobserve(element)
-      }
-    }, { threshold: 0.15, ...options })
+    // Fallback for older browsers/environments without IntersectionObserver.
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
+      setInView(true)
+      return
+    }
 
-    observer.observe(element)
-    return () => observer.disconnect()
+    let observer
+    try {
+      observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true)
+          observer.unobserve(element)
+        }
+      }, { threshold: 0.15, ...options })
+
+      observer.observe(element)
+      return () => observer.disconnect()
+    } catch {
+      setInView(true)
+    }
   }, [])
 
   return [ref, inView]
