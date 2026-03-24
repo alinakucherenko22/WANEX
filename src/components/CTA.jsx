@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from './useInView'
-import heroKids from '../assets/hero.png'
 
 const WHATSAPP_URL = 'https://wa.me/87019336833?text=Здравствуйте! Хочу узнать о вашей коллекции детской одежды'
 const INSTAGRAM_URL = 'https://www.instagram.com/wanexkids.kz/'
@@ -13,24 +12,32 @@ export default function CTA() {
 
   const referenceSlides = [
     {
-      src: heroKids,
-      alt: 'Детская коллекция WANEX',
+      src: '/65638647.jpg',
+      alt: 'Детская коллекция WANEX 1',
     },
     {
-      src: 'https://i.pinimg.com/736x/0b/40/da/0b40da312a256eb2b5319af8361acd70.jpg',
-      alt: 'Детский бутик, референс 1',
+      src: '/626530853_18562944415019972_4972946157144618593_n.jpg',
+      alt: 'Детская коллекция WANEX 2',
     },
     {
-      src: 'https://i.pinimg.com/736x/7d/8b/a3/7d8ba30083b63eafaa03422d0e6dad54.jpg',
-      alt: 'Детская мода, референс 2',
+      src: '/628068042_18564324367019972_4459560475559790454_n.jpg',
+      alt: 'Детская коллекция WANEX 3',
     },
     {
-      src: 'https://i.pinimg.com/736x/c7/71/78/c77178679746d297c6e7680ce3c62eb8.jpg',
-      alt: 'Детские образы, референс 3',
+      src: '/643560738_18575108542019972_5762966168535871465_n.jpg',
+      alt: 'Детская коллекция WANEX 4',
     },
     {
-      src: 'https://i.pinimg.com/736x/54/a0/4a/54a04af59da627615c1471764b44dcc0.jpg',
-      alt: 'Лукбук, референс 4',
+      src: '/652862277_18579253396019972_8571423765150000382_n.jpg',
+      alt: 'Детская коллекция WANEX 5',
+    },
+    {
+      src: '/654271604_18579257731019972_1861570530337161024_n.jpg',
+      alt: 'Детская коллекция WANEX 6',
+    },
+    {
+      src: '/656385510_18580427515019972_6697327393575999563_n.jpg',
+      alt: 'Детская коллекция WANEX 7',
     },
   ]
 

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import wanexLogo from '../assets/logo-wanex.svg'
 
 const WHATSAPP_URL = 'https://wa.me/87019336833?text=Здравствуйте! Хочу узнать о вашей коллекции детской одежды'
 const INSTAGRAM_URL = 'https://www.instagram.com/wanexkids.kz/'
@@ -46,7 +45,7 @@ export default function Header() {
         {/* Логотип */}
         <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
           <img
-            src={wanexLogo}
+            src="/logo-2026-03-24.jpg"
             alt="WANEX KIDS"
             style={{
               width: '148px',

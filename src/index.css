@@ -3,37 +3,37 @@
    ======================================== */
 
 :root {
-  --surface: #fdf9f4;
-  --surface-low: #f8f3ed;
-  --surface-container: #f2ede7;
-  --surface-high: #ece7e0;
-  --surface-highest: #e7e2da;
+  --surface: #fefaf5;
+  --surface-low: #fff4e8;
+  --surface-container: #fef0e1;
+  --surface-high: #f6e4d0;
+  --surface-highest: #efd8bf;
   --surface-lowest: #ffffff;
-  --surface-dim: #ded9d1;
+  --surface-dim: #dcc9b4;
   
-  --primary: #815163;
-  --primary-dim: #734557;
-  --primary-container: #f8bbd0;
-  --on-primary: #fff7f7;
-  --on-primary-container: #623648;
+  --primary: #e9573f;
+  --primary-dim: #ce442e;
+  --primary-container: #ffd5c8;
+  --on-primary: #fff7f3;
+  --on-primary-container: #5f1f14;
 
-  --secondary: #715578;
-  --secondary-container: #fad7ff;
-  --on-secondary: #fff7fb;
+  --secondary: #0f6fd8;
+  --secondary-container: #d8ecff;
+  --on-secondary: #f3f9ff;
 
-  --tertiary: #4b654e;
-  --tertiary-container: #ddfcde;
-  --on-tertiary: #e8ffe7;
+  --tertiary: #1e8c74;
+  --tertiary-container: #d8fff3;
+  --on-tertiary: #ecfffa;
 
   --on-surface: #34322d;
   --on-surface-variant: #615f59;
   --outline: #7d7a74;
   --outline-variant: #b6b1aa;
 
-  --shadow-ambient: 0 12px 32px rgba(129, 81, 99, 0.06);
-  --shadow-card: 0 4px 24px rgba(129, 81, 99, 0.08);
-  --shadow-hover: 0 20px 48px rgba(129, 81, 99, 0.14);
-  --shadow-float: 0 8px 32px rgba(75, 101, 78, 0.25);
+  --shadow-ambient: 0 12px 32px rgba(233, 87, 63, 0.08);
+  --shadow-card: 0 8px 28px rgba(233, 87, 63, 0.09);
+  --shadow-hover: 0 20px 48px rgba(233, 87, 63, 0.18);
+  --shadow-float: 0 8px 32px rgba(15, 111, 216, 0.22);
 
   --font-display: 'Plus Jakarta Sans', sans-serif;
   --font-body: 'Be Vietnam Pro', sans-serif;
@@ -58,7 +58,10 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--surface);
+  background:
+    radial-gradient(circle at 8% 8%, rgba(15, 111, 216, 0.09), transparent 40%),
+    radial-gradient(circle at 92% 10%, rgba(233, 87, 63, 0.1), transparent 42%),
+    linear-gradient(180deg, #fff8ef 0%, #fff4e8 100%);
   color: var(--on-surface);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -140,8 +143,8 @@ button {
 .section-label {
   font-family: var(--font-display);
   font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--primary);
   margin-bottom: 0.75rem;

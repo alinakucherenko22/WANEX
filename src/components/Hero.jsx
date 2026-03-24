@@ -1,6 +1,5 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import heroKids from '../assets/hero.png'
 
 const WHATSAPP_URL = 'https://wa.me/87019336833?text=Здравствуйте! Хочу узнать о вашей коллекции детской одежды'
 const INSTAGRAM_URL = 'https://www.instagram.com/wanexkids.kz/'
@@ -289,7 +288,7 @@ export default function Hero() {
             boxShadow: '0 32px 80px rgba(129, 81, 99, 0.2), 0 0 0 1px rgba(129, 81, 99, 0.05)',
           }}>
             <img
-              src={heroKids}
+              src="/65638647.jpg"
               alt="Стильная детская одежда WANEX — фотосессия"
               style={{
                 width: '100%', height: '100%',
