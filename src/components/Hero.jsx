@@ -27,6 +27,24 @@ const IconInstagram = () => (
 )
 
 export default function Hero() {
+  const topHighlights = [
+    {
+      title: '20 лет на рынке',
+      subtitle: 'Опыт и надежность с 2004 года',
+      gradient: 'linear-gradient(135deg, #ff7f50, #ff4f81)',
+    },
+    {
+      title: 'Бесплатная доставка',
+      subtitle: 'По всему городу Астане за наш счёт',
+      gradient: 'linear-gradient(135deg, #35c7dd, #2a9d8f)',
+    },
+    {
+      title: 'Широкий ассортимент',
+      subtitle: 'Одежда для детей всех возрастов и размеров',
+      gradient: 'linear-gradient(135deg, #ffc857, #f77f00)',
+    },
+  ]
+
   return (
     <section id="hero" style={{
       minHeight: '100vh',
@@ -67,9 +85,54 @@ export default function Hero() {
       }}>
         {/* Текстовый контент */}
         <div>
+          {/* Верхние инфо-карточки */}
+          <motion.div
+            className="hero-top-highlights"
+            variants={fadeUp} initial="hidden" animate="visible" custom={0}
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+              gap: '0.75rem',
+              marginBottom: '1.25rem',
+            }}
+          >
+            {topHighlights.map((item, i) => (
+              <div
+                key={i}
+                style={{
+                  borderRadius: 'var(--radius-lg)',
+                  padding: '0.75rem',
+                  background: 'rgba(255, 255, 255, 0.88)',
+                  border: '1px solid rgba(129, 81, 99, 0.12)',
+                  boxShadow: '0 8px 24px rgba(129, 81, 99, 0.08)',
+                }}
+              >
+                <div style={{
+                  fontFamily: 'var(--font-display)',
+                  fontWeight: 700,
+                  fontSize: '0.84rem',
+                  lineHeight: 1.25,
+                  background: item.gradient,
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  marginBottom: '0.3rem',
+                }}>
+                  {item.title}
+                </div>
+                <div style={{
+                  fontSize: '0.74rem',
+                  color: 'var(--on-surface-variant)',
+                  lineHeight: 1.35,
+                }}>
+                  {item.subtitle}
+                </div>
+              </div>
+            ))}
+          </motion.div>
+
           {/* Бадж */}
           <motion.div
-            variants={fadeUp} initial="hidden" animate="visible" custom={0}
+            variants={fadeUp} initial="hidden" animate="visible" custom={1}
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
               padding: '0.4rem 1rem',
@@ -85,7 +148,7 @@ export default function Hero() {
 
           {/* Главный заголовок */}
           <motion.h1
-            variants={fadeUp} initial="hidden" animate="visible" custom={1}
+            variants={fadeUp} initial="hidden" animate="visible" custom={2}
             style={{
               fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
               fontWeight: 800,
@@ -107,7 +170,7 @@ export default function Hero() {
 
           {/* Подзаголовок */}
           <motion.p
-            variants={fadeUp} initial="hidden" animate="visible" custom={2}
+            variants={fadeUp} initial="hidden" animate="visible" custom={3}
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.25rem)',
               color: 'var(--on-surface-variant)',
@@ -116,12 +179,12 @@ export default function Hero() {
               maxWidth: '480px',
             }}
           >
-            Турецкое качество по доступным ценам — 4 магазина в Астане. Kaspi Red, рассрочка, доставка по всему Казахстану.
+            Более 20 лет одеваем детей в Астане: турецкое качество, Kaspi Red и огромный выбор моделей для любого возраста.
           </motion.p>
 
           {/* Кнопки */}
           <motion.div
-            variants={fadeUp} initial="hidden" animate="visible" custom={3}
+            variants={fadeUp} initial="hidden" animate="visible" custom={4}
             style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
           >
             <a
@@ -185,14 +248,14 @@ export default function Hero() {
 
           {/* Статистика */}
           <motion.div
-            variants={fadeUp} initial="hidden" animate="visible" custom={4}
+            variants={fadeUp} initial="hidden" animate="visible" custom={5}
             style={{
               display: 'flex', gap: '2rem', marginTop: '3rem',
               flexWrap: 'wrap',
             }}
           >
             {[
-              { value: '4', label: 'магазина в Астане' },
+              { value: '20+', label: 'лет на рынке' },
               { value: '5 000+', label: 'довольных семей' },
               { value: '100%', label: 'турецкое качество' },
             ].map((stat, i) => (
@@ -273,7 +336,7 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Floating badge 2 - Delivery */}
+          {/* Floating badge 2 - Reviews */}
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
@@ -282,32 +345,29 @@ export default function Hero() {
               backgroundColor: 'white',
               borderRadius: 'var(--radius-xl)',
               padding: '0.875rem 1.25rem',
-              boxShadow: '0 16px 48px rgba(75, 101, 78, 0.12)',
+              boxShadow: '0 16px 48px rgba(67, 117, 196, 0.18)',
               display: 'flex', alignItems: 'center', gap: '0.625rem',
               minWidth: '196px',
-              border: '1px solid rgba(75,101,78,0.07)',
+              border: '1px solid rgba(67,117,196,0.16)',
             }}
           >
             <div style={{
               width: 40, height: 40, borderRadius: 'var(--radius-md)',
-              background: 'linear-gradient(135deg, #4b654e, #3a5a3e)',
+              background: 'linear-gradient(135deg, #4375c4, #5e60ce)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               flexShrink: 0,
             }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="1" y="3" width="15" height="13" rx="1"/>
-                <path d="M16 8h4l3 5v3h-7V8z"/>
-                <circle cx="5.5" cy="18.5" r="2.5"/>
-                <circle cx="18.5" cy="18.5" r="2.5"/>
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7A8.38 8.38 0 0 1 8.7 19L3 21l2-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6A8.38 8.38 0 0 1 12.5 3h.5a8.48 8.48 0 0 1 8 8v.5z"/>
               </svg>
             </div>
             <div>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.875rem', color: 'var(--on-surface)' }}>Доставка</div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--on-surface-variant)' }}>По Казахстану</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.875rem', color: 'var(--on-surface)' }}>5000 отзывов</div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--on-surface-variant)' }}>Доверяют WANEX</div>
             </div>
           </motion.div>
 
-          {/* Stars rating badge */}
+          {/* Floating badge 3 - Quality */}
           <motion.div
             animate={{ y: [0, -6, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
@@ -320,14 +380,14 @@ export default function Hero() {
               border: '1px solid rgba(129,81,99,0.07)',
             }}
           >
-            <div style={{ display: 'flex', gap: '2px', marginBottom: '4px' }}>
-              {[...Array(5)].map((_, i) => (
-                <svg key={i} width="12" height="12" viewBox="0 0 24 24" fill="#f9a825">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-              ))}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', marginBottom: '4px' }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59f00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 12l2 2 4-4"/>
+                <path d="M12 3l7 4v5c0 5-3.8 8.7-7 9-3.2-.3-7-4-7-9V7l7-4z"/>
+              </svg>
+              <span style={{ fontSize: '0.82rem', color: 'var(--on-surface)', fontWeight: 700, fontFamily: 'var(--font-display)' }}>Высокое качество</span>
             </div>
-            <div style={{ fontSize: '0.7rem', color: 'var(--on-surface-variant)', fontWeight: 600, fontFamily: 'var(--font-display)' }}>5 000+ отзывов</div>
+            <div style={{ fontSize: '0.7rem', color: 'var(--on-surface-variant)', fontWeight: 600, fontFamily: 'var(--font-display)' }}>Турецкие ткани и пошив</div>
           </motion.div>
         </motion.div>
       </div>
@@ -339,6 +399,9 @@ export default function Hero() {
             grid-template-columns: 1fr !important;
             text-align: center;
             padding-top: 7rem !important;
+          }
+          #hero .hero-top-highlights {
+            grid-template-columns: 1fr !important;
           }
           #hero > .container > div:last-child {
             display: none;

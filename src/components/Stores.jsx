@@ -54,7 +54,7 @@ export default function Stores() {
           >
             <p className="section-label">Наши магазины</p>
             <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 800 }}>
-              4 магазина в Астане —{' '}
+              Более 20 лет на рынке —{' '}
               <span style={{
                 background: 'linear-gradient(135deg, var(--primary), var(--secondary))',
                 WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',

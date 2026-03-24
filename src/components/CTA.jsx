@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from './useInView'
+import heroKids from '../assets/hero.png'
 
 const WHATSAPP_URL = 'https://wa.me/87019336833?text=Здравствуйте! Хочу узнать о вашей коллекции детской одежды'
 const INSTAGRAM_URL = 'https://www.instagram.com/wanexkids.kz/'
@@ -8,6 +9,38 @@ const TELEGRAM_URL = 'tg://join?invite=5KK-xCstorIyNWU6'
 
 export default function CTA() {
   const [ref, inView] = useInView({ threshold: 0.2 })
+  const [activeSlide, setActiveSlide] = useState(0)
+
+  const referenceSlides = [
+    {
+      src: heroKids,
+      alt: 'Детская коллекция WANEX',
+    },
+    {
+      src: 'https://i.pinimg.com/736x/0b/40/da/0b40da312a256eb2b5319af8361acd70.jpg',
+      alt: 'Детский бутик, референс 1',
+    },
+    {
+      src: 'https://i.pinimg.com/736x/7d/8b/a3/7d8ba30083b63eafaa03422d0e6dad54.jpg',
+      alt: 'Детская мода, референс 2',
+    },
+    {
+      src: 'https://i.pinimg.com/736x/c7/71/78/c77178679746d297c6e7680ce3c62eb8.jpg',
+      alt: 'Детские образы, референс 3',
+    },
+    {
+      src: 'https://i.pinimg.com/736x/54/a0/4a/54a04af59da627615c1471764b44dcc0.jpg',
+      alt: 'Лукбук, референс 4',
+    },
+  ]
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSlide(prev => (prev + 1) % referenceSlides.length)
+    }, 3200)
+
+    return () => clearInterval(timer)
+  }, [referenceSlides.length])
 
   return (
     <section id="contact" ref={ref} style={{
@@ -153,22 +186,71 @@ export default function CTA() {
             </a>
           </div>
 
-      {/* Показатели доверия */}
-          <div style={{
-            display: 'flex', gap: '2.5rem', justifyContent: 'center',
-            marginTop: '3rem', flexWrap: 'wrap',
-          }}>
-            {[
-              { svg: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>, text: 'Безопасная оплата' },
-              { svg: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>, text: 'Гарантия качества' },
-              { svg: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>, text: 'Быстрая доставка' },
-              { svg: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>, text: 'Простой возврат' },
-            ].map((item, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ opacity: 0.85 }}>{item.svg}</span>
-                <span style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.8rem', fontWeight: 600, fontFamily: 'var(--font-display)' }}>{item.text}</span>
+          {/* Автослайдер референсов */}
+          <div style={{ marginTop: '3rem', display: 'flex', justifyContent: 'center' }}>
+            <div style={{
+              width: 'min(860px, 100%)',
+              borderRadius: 'var(--radius-xl)',
+              overflow: 'hidden',
+              position: 'relative',
+              boxShadow: '0 28px 68px rgba(0, 0, 0, 0.28)',
+              border: '1px solid rgba(255,255,255,0.28)',
+              backgroundColor: 'rgba(255,255,255,0.12)',
+            }}>
+              <div style={{ position: 'relative', width: '100%', paddingBottom: '62%' }}>
+                {referenceSlides.map((slide, index) => (
+                  <img
+                    key={slide.src}
+                    src={slide.src}
+                    alt={slide.alt}
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      opacity: activeSlide === index ? 1 : 0,
+                      transform: activeSlide === index ? 'scale(1)' : 'scale(1.04)',
+                      transition: 'opacity 0.75s ease, transform 1.1s ease',
+                    }}
+                  />
+                ))}
+                <div style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(to top, rgba(38,19,51,0.34) 0%, transparent 55%)',
+                  pointerEvents: 'none',
+                }} />
               </div>
-            ))}
+
+              <div style={{
+                position: 'absolute',
+                left: '50%',
+                bottom: '1rem',
+                transform: 'translateX(-50%)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.45rem',
+              }}>
+                {referenceSlides.map((slide, index) => (
+                  <button
+                    key={`${slide.alt}-${index}`}
+                    type="button"
+                    aria-label={`Перейти к слайду ${index + 1}`}
+                    onClick={() => setActiveSlide(index)}
+                    style={{
+                      width: activeSlide === index ? 20 : 8,
+                      height: 8,
+                      borderRadius: '999px',
+                      border: 'none',
+                      cursor: 'pointer',
+                      transition: 'all 0.3s ease',
+                      backgroundColor: activeSlide === index ? 'white' : 'rgba(255,255,255,0.5)',
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>

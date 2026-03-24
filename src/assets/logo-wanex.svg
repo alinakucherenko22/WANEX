@@ -1,0 +1,26 @@
+<svg width="360" height="128" viewBox="0 0 360 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">WANEX KIDS</title>
+  <desc id="desc">Логотип WANEX KIDS в розово-голубой палитре</desc>
+  <defs>
+    <linearGradient id="outer" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#25d5da"/>
+      <stop offset="100%" stop-color="#14bcc4"/>
+    </linearGradient>
+    <linearGradient id="inner" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f81cff"/>
+      <stop offset="100%" stop-color="#cc13d1"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a17ff"/>
+      <stop offset="100%" stop-color="#2e2bdf"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="4" y="4" width="352" height="120" rx="60" fill="url(#outer)"/>
+  <rect x="16" y="16" width="328" height="96" rx="48" fill="url(#ring)"/>
+  <rect x="22" y="22" width="316" height="84" rx="42" fill="none" stroke="#ffffff" stroke-width="5"/>
+  <rect x="28" y="28" width="304" height="72" rx="36" fill="url(#inner)"/>
+
+  <text x="180" y="68" text-anchor="middle" fill="#ffffff" font-family="Montserrat, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="2">WANEX</text>
+  <text x="180" y="94" text-anchor="middle" fill="#ffffff" font-family="Montserrat, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="10">KIDS</text>
+</svg>

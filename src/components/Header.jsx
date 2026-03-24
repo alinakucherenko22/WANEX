@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import wanexLogo from '../assets/logo-wanex.svg'
 
 const WHATSAPP_URL = 'https://wa.me/87019336833?text=Здравствуйте! Хочу узнать о вашей коллекции детской одежды'
 const INSTAGRAM_URL = 'https://www.instagram.com/wanexkids.kz/'
@@ -44,21 +45,16 @@ export default function Header() {
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem' }}>
         {/* Логотип */}
         <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
-          <div style={{
-            width: 40, height: 40,
-            background: 'linear-gradient(135deg, #815163, #734557)',
-            borderRadius: '12px',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            boxShadow: '0 4px 12px rgba(129, 81, 99, 0.3)',
-          }}>
-            <span style={{ color: 'white', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.1rem' }}>W</span>
-          </div>
-          <span style={{
-            fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.4rem',
-            background: 'linear-gradient(135deg, #815163, #734557)',
-            WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-            letterSpacing: '-0.04em',
-          }}>WANEX</span>
+          <img
+            src={wanexLogo}
+            alt="WANEX KIDS"
+            style={{
+              width: '148px',
+              height: '52px',
+              objectFit: 'contain',
+              filter: 'drop-shadow(0 6px 16px rgba(30, 23, 255, 0.26))',
+            }}
+          />
         </a>
 
         {/* Десктоп меню */}
