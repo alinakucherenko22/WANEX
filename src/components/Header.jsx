@@ -7,6 +7,7 @@ const TELEGRAM_URL = 'tg://join?invite=5KK-xCstorIyNWU6'
 const MAP_2GIS = 'https://2gis.kz/astana/firm/70000001019496551'
 
 export default function Header() {
+  const publicBase = import.meta.env.BASE_URL
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -45,7 +46,7 @@ export default function Header() {
         {/* Логотип */}
         <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
           <img
-            src="/logo-2026-03-24.jpg"
+            src={`${publicBase}logo-2026-03-24.jpg`}
             alt="WANEX KIDS"
             style={{
               width: '148px',

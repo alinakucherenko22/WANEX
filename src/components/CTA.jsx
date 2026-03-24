@@ -9,34 +9,35 @@ const TELEGRAM_URL = 'tg://join?invite=5KK-xCstorIyNWU6'
 export default function CTA() {
   const [ref, inView] = useInView({ threshold: 0.2 })
   const [activeSlide, setActiveSlide] = useState(0)
+  const publicBase = import.meta.env.BASE_URL
 
   const referenceSlides = [
     {
-      src: '/65638647.jpg',
+      src: `${publicBase}65638647.jpg`,
       alt: 'Детская коллекция WANEX 1',
     },
     {
-      src: '/626530853_18562944415019972_4972946157144618593_n.jpg',
+      src: `${publicBase}626530853_18562944415019972_4972946157144618593_n.jpg`,
       alt: 'Детская коллекция WANEX 2',
     },
     {
-      src: '/628068042_18564324367019972_4459560475559790454_n.jpg',
+      src: `${publicBase}628068042_18564324367019972_4459560475559790454_n.jpg`,
       alt: 'Детская коллекция WANEX 3',
     },
     {
-      src: '/643560738_18575108542019972_5762966168535871465_n.jpg',
+      src: `${publicBase}643560738_18575108542019972_5762966168535871465_n.jpg`,
       alt: 'Детская коллекция WANEX 4',
     },
     {
-      src: '/652862277_18579253396019972_8571423765150000382_n.jpg',
+      src: `${publicBase}652862277_18579253396019972_8571423765150000382_n.jpg`,
       alt: 'Детская коллекция WANEX 5',
     },
     {
-      src: '/654271604_18579257731019972_1861570530337161024_n.jpg',
+      src: `${publicBase}654271604_18579257731019972_1861570530337161024_n.jpg`,
       alt: 'Детская коллекция WANEX 6',
     },
     {
-      src: '/656385510_18580427515019972_6697327393575999563_n.jpg',
+      src: `${publicBase}656385510_18580427515019972_6697327393575999563_n.jpg`,
       alt: 'Детская коллекция WANEX 7',
     },
   ]

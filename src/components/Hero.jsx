@@ -25,6 +25,8 @@ const IconInstagram = () => (
 )
 
 export default function Hero() {
+  const publicBase = import.meta.env.BASE_URL
+
   return (
     <section id="hero" style={{
       minHeight: '100vh',
@@ -184,7 +186,7 @@ export default function Hero() {
             boxShadow: '0 32px 80px rgba(129, 81, 99, 0.2), 0 0 0 1px rgba(129, 81, 99, 0.05)',
           }}>
             <img
-              src="/65638647.jpg"
+              src={`${publicBase}65638647.jpg`}
               alt="Стильная детская одежда WANEX — фотосессия"
               style={{
                 width: '100%', height: '100%',

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from './useInView'
 
 const categories = ['Все', 'Девочки', 'Мальчики', 'Новорождённые', 'Школа']
+const publicBase = import.meta.env.BASE_URL
 
 const products = [
   {
@@ -10,7 +11,7 @@ const products = [
     name: 'Платье «Бабочка»',
     price: '4 990 ₸',
     age: '2–7 лет',
-    img: '/65638647.jpg',
+    img: `${publicBase}65638647.jpg`,
     tag: '🔥 Хит',
     tagColor: '#e91e63',
   },
@@ -19,7 +20,7 @@ const products = [
     name: 'Костюм «Капитан»',
     price: '5 490 ₸',
     age: '3–9 лет',
-    img: '/626530853_18562944415019972_4972946157144618593_n.jpg',
+    img: `${publicBase}626530853_18562944415019972_4972946157144618593_n.jpg`,
     tag: '⭐ Новинка',
     tagColor: '#ff9800',
   },
@@ -28,7 +29,7 @@ const products = [
     name: 'Боди-комплект',
     price: '3 490 ₸',
     age: '0–12 мес.',
-    img: '/628068042_18564324367019972_4459560475559790454_n.jpg',
+    img: `${publicBase}628068042_18564324367019972_4459560475559790454_n.jpg`,
     tag: '💎 Эксклюзив',
     tagColor: '#9c27b0',
   },
@@ -37,7 +38,7 @@ const products = [
     name: 'Форма «Классика»',
     price: '6 990 ₸',
     age: '6–14 лет',
-    img: '/643560738_18575108542019972_5762966168535871465_n.jpg',
+    img: `${publicBase}643560738_18575108542019972_5762966168535871465_n.jpg`,
     tag: '✅ В наличии',
     tagColor: '#4caf50',
   },
@@ -46,7 +47,7 @@ const products = [
     name: 'Юбка «Пышка»',
     price: '2 990 ₸',
     age: '3–8 лет',
-    img: '/652862277_18579253396019972_8571423765150000382_n.jpg',
+    img: `${publicBase}652862277_18579253396019972_8571423765150000382_n.jpg`,
     tag: '🔥 Хит',
     tagColor: '#e91e63',
   },
@@ -55,7 +56,7 @@ const products = [
     name: 'Куртка «Спорт»',
     price: '7 490 ₸',
     age: '4–12 лет',
-    img: '/654271604_18579257731019972_1861570530337161024_n.jpg',
+    img: `${publicBase}654271604_18579257731019972_1861570530337161024_n.jpg`,
     tag: '❄️ Осень 2024',
     tagColor: '#2196f3',
   },
