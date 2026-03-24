@@ -104,11 +104,13 @@ export default function Stores() {
                 borderRadius: 'var(--radius-lg)',
                 backgroundColor: store.color,
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: '1.5rem',
                 marginBottom: '1.25rem',
                 boxShadow: `0 8px 20px ${store.color}40`,
               }}>
-                🏬
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
               </div>
 
               <h3 style={{
@@ -119,21 +121,24 @@ export default function Stores() {
               </h3>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
-                <p style={{ fontSize: '0.875rem', color: 'var(--on-surface-variant)', display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
-                  <span>📍</span> {store.address}
+                <p style={{ fontSize: '0.875rem', color: 'var(--on-surface-variant)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{flexShrink:0}}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  {store.address}
                 </p>
-                <p style={{ fontSize: '0.875rem', color: 'var(--on-surface-variant)', display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
-                  <span>🕐</span> {store.hours}
+                <p style={{ fontSize: '0.875rem', color: 'var(--on-surface-variant)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{flexShrink:0}}><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  {store.hours}
                 </p>
                 <a
                   href={`tel:${store.phone.replace(/\s/g, '')}`}
                   style={{
-                    fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: '0.375rem',
+                    fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: '0.5rem',
                     color: store.color, fontWeight: 600, fontFamily: 'var(--font-display)',
                     transition: 'opacity 0.2s',
                   }}
                 >
-                  <span>📞</span> {store.phone}
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{flexShrink:0}}><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l1.06-1.06a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                  {store.phone}
                 </a>
               </div>
             </motion.div>

@@ -159,13 +159,13 @@ export default function CTA() {
             marginTop: '3rem', flexWrap: 'wrap',
           }}>
             {[
-              { icon: '🔒', text: 'Безопасная оплата' },
-              { icon: '✓', text: 'Гарантия качества' },
-              { icon: '📦', text: 'Быстрая доставка' },
-              { icon: '↩', text: 'Простой возврат' },
+              { svg: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>, text: 'Безопасная оплата' },
+              { svg: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>, text: 'Гарантия качества' },
+              { svg: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>, text: 'Быстрая доставка' },
+              { svg: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>, text: 'Простой возврат' },
             ].map((item, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
-                <span style={{ fontSize: '1rem' }}>{item.icon}</span>
+              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <span style={{ opacity: 0.85 }}>{item.svg}</span>
                 <span style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.8rem', fontWeight: 600, fontFamily: 'var(--font-display)' }}>{item.text}</span>
               </div>
             ))}

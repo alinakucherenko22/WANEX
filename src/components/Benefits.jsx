@@ -2,47 +2,90 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from './useInView'
 
+const BenefitIcon = ({ type }) => {
+  const icons = {
+    quality: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+      </svg>
+    ),
+    card: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+        <line x1="1" y1="10" x2="23" y2="10"/>
+      </svg>
+    ),
+    delivery: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="1" y="3" width="15" height="13" rx="1"/>
+        <path d="M16 8h4l3 5v3h-7V8z"/>
+        <circle cx="5.5" cy="18.5" r="2.5"/>
+        <circle cx="18.5" cy="18.5" r="2.5"/>
+      </svg>
+    ),
+    store: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+    ),
+    size: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+      </svg>
+    ),
+    new: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="12" y1="8" x2="12" y2="12"/>
+        <line x1="12" y1="16" x2="12.01" y2="16"/>
+      </svg>
+    ),
+  }
+  return icons[type] || null
+}
+
 const benefits = [
   {
-    icon: '✓',
+    iconType: 'quality',
     title: 'Турецкое качество',
     description: 'Мягкие гипоаллергенные ткани, проверенные стандартами ЕС. Безопасно для нежной детской кожи.',
-    gradient: 'linear-gradient(135deg, #f8bbd0, #e91e63)',
+    gradient: 'linear-gradient(135deg, #c2748a, #815163)',
     bg: 'var(--primary-container)',
   },
   {
-    icon: '💳',
+    iconType: 'card',
     title: 'Kaspi Red & рассрочка',
     description: 'Покупай сейчас, плати потом. Рассрочка 0% через Kaspi Red — одежда без лишних трат.',
-    gradient: 'linear-gradient(135deg, #ffccbc, #ff5722)',
+    gradient: 'linear-gradient(135deg, #f4a261, #e76f51)',
     bg: 'rgba(255, 204, 188, 0.4)',
   },
   {
-    icon: '📦',
+    iconType: 'delivery',
     title: 'Доставка по Казахстану',
     description: 'Отправляем в любой город. Быстрая доставка от склада в Астане по всей стране.',
-    gradient: 'linear-gradient(135deg, #ddfcde, #4b654e)',
+    gradient: 'linear-gradient(135deg, #52b788, #4b654e)',
     bg: 'var(--tertiary-container)',
   },
   {
-    icon: '🏬',
+    iconType: 'store',
     title: '4 магазина в Астане',
     description: 'Большой выбор в наличии. Посетите нас в ТРЦ Mega Silk Way, Asia Park и других локациях.',
-    gradient: 'linear-gradient(135deg, #fad7ff, #9c27b0)',
+    gradient: 'linear-gradient(135deg, #b07dab, #715578)',
     bg: 'var(--secondary-container)',
   },
   {
-    icon: '📏',
+    iconType: 'size',
     title: 'Широкий размерный ряд',
     description: 'От 0 до 14 лет. Грамотные лекала для удобства движения и роста вашего ребёнка.',
-    gradient: 'linear-gradient(135deg, #fff9c4, #f9a825)',
+    gradient: 'linear-gradient(135deg, #f4c430, #c9941a)',
     bg: 'rgba(255, 249, 196, 0.6)',
   },
   {
-    icon: '⭐',
+    iconType: 'new',
     title: 'Новинки каждую неделю',
     description: 'Свежие коллекции с учётом трендов сезона. Следите в Instagram, WhatsApp и Telegram.',
-    gradient: 'linear-gradient(135deg, #bbdefb, #1565c0)',
+    gradient: 'linear-gradient(135deg, #74b3ce, #3a7fbf)',
     bg: 'rgba(187, 222, 251, 0.4)',
   },
 ]
@@ -121,11 +164,10 @@ export default function Benefits() {
                 borderRadius: 'var(--radius-lg)',
                 background: benefit.gradient,
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: '1.5rem',
                 marginBottom: '1.25rem',
-                boxShadow: '0 8px 20px rgba(0,0,0,0.15)',
+                boxShadow: '0 8px 20px rgba(0,0,0,0.12)',
               }}>
-                {benefit.icon}
+                <BenefitIcon type={benefit.iconType} />
               </div>
               <h3 style={{
                 fontFamily: 'var(--font-display)', fontWeight: 700,
